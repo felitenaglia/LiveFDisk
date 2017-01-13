@@ -1,4 +1,8 @@
-all: bootable.img fdisk-multiboot-kernel.bin
+all: dirs bootable.img fdisk-multiboot-kernel.bin
+
+dirs:
+	mkdir -p bin
+	mkdir -p build
 
 bootload.o : src/bootloader.asm
 	nasm -o build/bootload.o src/bootloader.asm
